@@ -1,25 +1,24 @@
-import React from 'react'
-import logo from "../../logo.png"
-import { Link } from "react-router-dom"
-import { ImSearch } from "react-icons/im"
+import React from "react";
+import "./Header.scss";
+import logo from "../../Images/logo.png";
+import { Link } from "react-router-dom";
+import { ImSearch } from "react-icons/im";
 
 const Header = () => {
-    return (
-        <nav className="header">
+  return (
+    <nav className="header">
+      <img src={logo} alt="logo" />
 
-            <img src={logo} alt="logo" />
+      <div className="nav-links">
+        <Link to="/">TV Shows</Link>
+        <Link to="/">Movies</Link>
+        <Link to="/">Recently Added</Link>
+        <Link to="/">My List</Link>
+      </div>
 
-            <div>
-                <Link to="/tvshows" >TV Shows</Link>
-                <Link to="/movies" >Movies</Link>
-                <Link to="/recent" >Recently Added</Link>
-                <Link to="/mylist" >My List</Link>
-            </div>
+      <ImSearch className="search-icon" />
+    </nav>
+  );
+};
 
-            <ImSearch />
-
-        </nav>
-    )
-}
-
-export default Header
+export default Header;
